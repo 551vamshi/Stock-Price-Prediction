@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+
+# Environment variables / secrets
+.env
+*.env
+secrets.py
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Trained models (large binary files)
+models/*.h5
+models/*.keras
+models/*.pkl
+# Keep the placeholder
+!models/.gitkeep
+
+# Data files (large / temporary)
+data/*.csv
+data/*.xlsx
+data/*.json
+# Keep the placeholder
+!data/.gitkeep
+
+# Logs
+*.log
+logs/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/

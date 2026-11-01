@@ -1,0 +1,25 @@
+# Stock Price Prediction - Requirements
+# Install with: pip install -r requirements.txt
+
+# Core Data Science
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+
+# Stock Market Data
+yfinance>=0.2.30
+
+# Deep Learning (CPU-friendly)
+tensorflow>=2.13.0
+
+# Visualization
+matplotlib>=3.7.0
+plotly>=5.16.0
+
+# Web Dashboard
+streamlit>=1.27.0
+
+# Utilities & Testing
+requests>=2.31.0
+python-dateutil>=2.8.2
+pytest>=7.4.0
