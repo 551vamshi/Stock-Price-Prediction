@@ -54,3 +54,4 @@ desktop.ini
 dist/
 build/
 *.egg-info/
+users.json

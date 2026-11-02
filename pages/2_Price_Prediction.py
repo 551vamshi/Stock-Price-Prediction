@@ -9,6 +9,7 @@ import os
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(__file__)), "src"))
 
 import streamlit as st
+from auth import require_auth
 import numpy as np
 from datetime import timedelta
 
@@ -17,6 +18,9 @@ st.set_page_config(
     page_icon="🤖",
     layout="wide",
 )
+
+# User Authentication
+current_user = require_auth()
 
 st.markdown("""
 <style>

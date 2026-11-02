@@ -17,6 +17,8 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime, timedelta
 
+from auth import require_auth
+
 try:
     from src.data_collection import (
         fetch_stock_data,
@@ -114,6 +116,11 @@ div[data-testid="stMetric"] {
 </style>
 """, unsafe_allow_html=True)
 
+# ==============================
+# USER AUTHENTICATION
+# ==============================
+current_user = require_auth()
+
 if "df" not in st.session_state:
     st.session_state.df = None
 if "ticker" not in st.session_state:
@@ -126,6 +133,16 @@ if "df_indicators" not in st.session_state:
     st.session_state.df_indicators = None
 
 with st.sidebar:
+    # Logged-in user information
+    st.markdown(f"### 👋 Welcome, {current_user['name']}")
+
+    # Logout button
+    if st.button("🚪 Logout", use_container_width=True):
+        st.session_state.pop("authenticated_user", None)
+        st.rerun()
+
+    st.markdown("---")
+    
     st.markdown("## 📈 Stock Selector")
     st.markdown("---")
 

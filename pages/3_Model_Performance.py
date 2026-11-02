@@ -1,3 +1,4 @@
+
 """
 pages/3_Model_Performance.py
 ----------------------------
@@ -11,12 +12,16 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(__file__)), "src
 import streamlit as st
 import pandas as pd
 import numpy as np
+from auth import require_auth
 
 st.set_page_config(
     page_title="Model Performance | Stock Predictor",
     page_icon="📉",
     layout="wide",
 )
+
+# User Authentication
+current_user = require_auth()
 
 st.markdown("""
 <style>

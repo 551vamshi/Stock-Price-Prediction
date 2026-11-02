@@ -1,3 +1,4 @@
+
 """
 pages/4_About_Project.py
 ------------------------
@@ -9,12 +10,16 @@ import os
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(__file__)), "src"))
 
 import streamlit as st
+from auth import require_auth
 
 st.set_page_config(
     page_title="About | Stock Predictor",
     page_icon="ℹ️",
     layout="wide",
 )
+
+# User Authentication
+current_user = require_auth()
 
 st.markdown("""
 <style>

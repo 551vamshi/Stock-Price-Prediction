@@ -9,6 +9,7 @@ import os
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(__file__)), "src"))
 
 import streamlit as st
+from auth import require_auth
 
 try:
     from src.data_analysis import get_summary_statistics, get_price_change_today
@@ -41,6 +42,9 @@ st.set_page_config(
     layout="wide",
 )
 
+# User Authentication
+current_user = require_auth()
+st.markdown(f"### 👋 Welcome, {current_user['name']}")
 st.markdown("""
 <style>
 .main { background-color: #0d1117; }
